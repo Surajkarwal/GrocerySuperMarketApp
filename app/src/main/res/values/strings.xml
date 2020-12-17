@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">GrocerySuperMarketApp</string>
+    <string name="splash_text">Welcome!</string>
 </resources>

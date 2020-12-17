@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">GrocerySuperMarketApp</string>
     <string name="splash_text">Welcome!</string>
+
+    <string name="app_title">Grocery Super Market App</string>
+    <string name="enter_postal_code">Type your postal code</string>
+    <string name="confirm">confirm</string>
+
 </resources>

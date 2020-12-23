@@ -16,14 +16,14 @@ import java.util.List;
 
 public class Adapter1 extends RecyclerView.Adapter<Adapter1.ViewHolder> {
     LayoutInflater inflater;
-    List<String> item,price,description,category,image;
+    List<String> item,price,description,image;
 
-    public Adapter1(Context context, List<String> itemp,List<String> pricep,List<String> description,List<String> imagep )
+    public Adapter1(Context context, List<String> itemp,List<String> pricep,List<String> descp,List<String> imagep )
     {
         this.inflater = LayoutInflater.from(context);
         item = itemp;
         price = pricep;
-      //  description = descp;
+      description = descp;
 
         image = imagep;
     }
@@ -46,10 +46,10 @@ public class Adapter1 extends RecyclerView.Adapter<Adapter1.ViewHolder> {
         String Prices = price.get(position);
 
         String img = image.get(position);
-
+String desc = description.get(position);
         holder.item.setText(items);
         holder.price.setText(Prices);
-
+holder.desc.setText(desc);
 
         Picasso.get().load(img).into(holder.imgca);
 

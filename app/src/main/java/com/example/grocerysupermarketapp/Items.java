@@ -13,8 +13,14 @@ import android.widget.Toast;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.FileAsyncHttpResponseHandler;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,87 +34,65 @@ import jxl.read.biff.BiffException;
 public class Items extends AppCompatActivity {
     RecyclerView rc1;
     Adapter1 adp1;
-    AsyncHttpClient client;
-    //item , price, desc, category, image
-    List<String> item,price,description,category,image;
 
-    Workbook workboo;
+
+    ArrayList<String> item = new ArrayList<>();
+    ArrayList<String> price = new ArrayList<>();
+    ArrayList<String> description = new ArrayList<>();
+    ArrayList<String> image = new ArrayList<>();
+    ArrayList<String> category = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_items);
+rc1 = findViewById(R.id.recyclerView);
 
+try {
+            JSONObject obj = new JSONObject(loadJSONfromAssets());
 
-        String url = "https://github.com/Surajkarwal/GrocerySuperMarketApp/blob/master/grocery.xls";
+            //fetching
+            JSONArray GroceryArray = obj.getJSONArray("users");
 
+            //loop
 
-//        Toolbar toolbar = findViewById(R.id.toolbar);
-//        setSupportActionBar(toolbar);
-
-        rc1 = findViewById(R.id.recyclerView);
-
-
-item = new ArrayList<>();
-description = new ArrayList<>();
-price = new ArrayList<>();
-category = new ArrayList<>();
-image = new ArrayList<>();
-
-
-
-
-client = new AsyncHttpClient();
-    client.get(url, new FileAsyncHttpResponseHandler(this) {
-        @Override
-        public void onFailure(int statusCode, Header[] headers, Throwable throwable, File file) {
-            Toast.makeText(Items.this, "Failes to load the xml file", Toast.LENGTH_SHORT).show();
-        }
-
-        @Override
-        public void onSuccess(int statusCode, Header[] headers, File file) {
-
-            Toast.makeText(Items.this, "File is loaded", Toast.LENGTH_SHORT).show();
-            WorkbookSettings wb = new WorkbookSettings();
-            wb.setGCDisabled(true);
-            if(file != null)
+            for (int i = 0; i < GroceryArray.length(); i++)
             {
-                try {
-                    workboo = Workbook.getWorkbook(file);
-                    Sheet sheet = workboo.getSheet(0);
-                    for (int i = 0 ;i < sheet.getRows() ; i++)
-                    {
-Cell[] row = sheet.getRow(i);
-item.add(row[1].getContents());
+                //craeting json obj for fetching single data
+                JSONObject Grocerydetail = GroceryArray.getJSONObject(i);
 
-price.add(row[2].getContents());
-                        description.add(row[3].getContents());
-
-category.add(row[4].getContents());
-
-                        image.add(row[5].getContents());
-
-
-                    }
-                    Showdata();
-                    Log.d("TAG","sucess"+item);
-
-
-                } catch (IOException e) {
-                    e.printStackTrace();
-                } catch (BiffException e) {
-                    e.printStackTrace();
-                }
-
+                item.add(Grocerydetail.getString("item"));
+                price.add(Grocerydetail.getString("price"));
+                description.add(Grocerydetail.getString("descript"));
+                image.add(Grocerydetail.getString("Image"));
             }
+    adp1 = new Adapter1(this, item, price, description, image);
+    rc1.setLayoutManager(new LinearLayoutManager(this));
+    rc1.setAdapter(adp1);
+
+}
+        catch (JSONException e) {
+            e.printStackTrace();
         }
-    });
-    }
-    private void Showdata()
-    {
-        adp1 = new Adapter1(this,item,price,description,image);
-        rc1.setLayoutManager(new LinearLayoutManager(this));
-        rc1.setAdapter(adp1) ;
-
 
     }
+
+    private String loadJSONfromAssets() {
+        String json = null;
+        try {
+            InputStream is = getAssets().open("m9gpz-5hhao.json");
+            int size = is.available();
+            byte[] buffer = new byte[size];
+            is.read(buffer);
+            is.close();
+
+            json = new String(buffer,"UTF-8");
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            return null;
+        }
+return json;
+    }
+
+
 }

@@ -17,7 +17,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:padding="5dp">
 
 
@@ -25,34 +25,35 @@
                 android:id="@+id/cardImg"
                 android:layout_width="75dp"
                 android:layout_height="75dp"
-                android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintHorizontal_bias="0.047"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.089"
+                app:layout_constraintVertical_bias="0.205"
                 app:srcCompat="@drawable/ic_launcher_background" />
 
             <TextView
                 android:id="@+id/item"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_width="105dp"
+                android:layout_height="26dp"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="4dp"
                 android:layout_marginEnd="16dp"
                 android:text="Sample Title"
                 android:textSize="18sp"
                 android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/Price"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toEndOf="@+id/cardImg"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/Price"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_width="105dp"
+                android:layout_height="27dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="32dp"
                 android:layout_marginEnd="16dp"
@@ -66,30 +67,64 @@
 
             <TextView
                 android:id="@+id/desc"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_width="106dp"
+                android:layout_height="22dp"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
                 android:layout_marginEnd="16dp"
                 android:text="Sample Description for the given title"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toEndOf="@+id/cardImg"
-                app:layout_constraintTop_toBottomOf="@+id/item"
-                app:layout_constraintVertical_bias="0.231" />
+                app:layout_constraintTop_toBottomOf="@+id/Price" />
 
             <Button
                 android:id="@+id/button2"
                 android:layout_width="174dp"
                 android:layout_height="38dp"
-                android:layout_marginStart="188dp"
-                android:layout_marginEnd="41dp"
                 android:text="Add To Cart"
-                app:layout_constraintEnd_toEndOf="@+id/desc"
-                app:layout_constraintHorizontal_bias="0.63"
-                app:layout_constraintStart_toEndOf="@+id/cardImg"
-                tools:layout_editor_absoluteY="91dp" />
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.157"
+                app:layout_constraintStart_toEndOf="@+id/Price"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="38dp"
+                android:layout_height="29dp"
+                android:layout_marginStart="28dp"
+                app:layout_constraintBottom_toTopOf="@+id/button2"
+                app:layout_constraintStart_toEndOf="@+id/item"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.619"
+                app:srcCompat="@drawable/plus" />
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="33dp"
+                android:layout_height="27dp"
+                android:layout_marginEnd="28dp"
+                app:layout_constraintBottom_toTopOf="@+id/button2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.565"
+                app:srcCompat="@drawable/minus" />
+
+            <EditText
+                android:id="@+id/editTextTextPersonName"
+                android:layout_width="34dp"
+                android:layout_height="35dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="0"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toTopOf="@+id/button2"
+                app:layout_constraintEnd_toStartOf="@+id/imageView4"
+                app:layout_constraintStart_toEndOf="@+id/imageView3"
+                app:layout_constraintTop_toTopOf="parent" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>

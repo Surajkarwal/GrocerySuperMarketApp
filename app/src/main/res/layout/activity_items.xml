@@ -23,7 +23,7 @@
         android:layout_width="375dp"
         android:layout_height="38dp"
         android:layout_marginTop="36dp"
-        android:backgroundTint="#FDE54A"
+        android:backgroundTint="#FBF0A8"
         android:textAlignment="viewStart"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.428"
@@ -57,7 +57,7 @@
         android:id="@+id/tabLayout2"
         android:layout_width="373dp"
         android:layout_height="32dp"
-        android:backgroundTint="#FDE54A"
+        android:backgroundTint="#FBF0A8"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="86dp">

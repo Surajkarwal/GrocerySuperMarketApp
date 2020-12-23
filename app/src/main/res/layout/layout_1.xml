@@ -19,7 +19,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="#FFFFFE"
-            android:backgroundTint="#FBF5E3"
+            android:backgroundTint="#FFFFFD"
             android:padding="5dp">
 
 
@@ -84,6 +84,7 @@
                 android:id="@+id/button2"
                 android:layout_width="174dp"
                 android:layout_height="38dp"
+
                 android:text="Add To Cart"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"

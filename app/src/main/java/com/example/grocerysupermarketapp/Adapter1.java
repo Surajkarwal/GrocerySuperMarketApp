@@ -24,9 +24,16 @@ public class Adapter1 extends RecyclerView.Adapter<Adapter1.ViewHolder> {
         item = itemp;
         price = pricep;
       description = descp;
-
-        image = imagep;
+      image = imagep;
     }
+    public void ChangeData( List<String> itemp,List<String> pricep,List<String> descp,List<String> imagep ){
+        item = itemp;
+        price = pricep;
+        description = descp;
+        image = imagep;
+        notifyDataSetChanged();
+    }
+
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {

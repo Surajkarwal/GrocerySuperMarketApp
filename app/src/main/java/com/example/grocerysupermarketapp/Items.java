@@ -10,6 +10,7 @@ import android.util.Log;
 import android.widget.Adapter;
 import android.widget.Toast;
 
+import com.google.android.material.tabs.TabLayout;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.FileAsyncHttpResponseHandler;
 
@@ -49,23 +50,20 @@ rc1 = findViewById(R.id.recyclerView);
 
 try {
             JSONObject obj = new JSONObject(loadJSONfromAssets());
-
-            //fetching
             JSONArray GroceryArray = obj.getJSONArray("users");
-
-            //loop
-
             for (int i = 0; i < GroceryArray.length(); i++)
-            {
-                //craeting json obj for fetching single data
-                JSONObject Grocerydetail = GroceryArray.getJSONObject(i);
+    {
+        //craeting json obj for fetching single data
+        JSONObject Grocerydetail = GroceryArray.getJSONObject(i);
 
-                item.add(Grocerydetail.getString("item"));
-                price.add(Grocerydetail.getString("price"));
-                description.add(Grocerydetail.getString("descript"));
-                image.add(Grocerydetail.getString("Image"));
-            }
-    adp1 = new Adapter1(this, item, price, description, image);
+        item.add(Grocerydetail.getString("item"));
+        price.add(Grocerydetail.getString("price"));
+        description.add(Grocerydetail.getString("descript"));
+        image.add(Grocerydetail.getString("Image"));
+    }
+
+
+            adp1 = new Adapter1(this, item, price, description, image);
     rc1.setLayoutManager(new LinearLayoutManager(this));
     rc1.setAdapter(adp1);
 

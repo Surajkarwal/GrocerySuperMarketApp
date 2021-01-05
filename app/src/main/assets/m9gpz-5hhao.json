@@ -79,4 +79,90 @@
     "category": "Produce",
     "Image": "https://www.netclipart.com/pp/m/17-170634_free-green-beans-png-image-green-beans-no.png"
   }
-  ]}
+  ],
+  "animal":[
+    {
+      "index": "1",
+      "item": "lion",
+      "price": "4",
+      "descript": "fresh",
+      "category": "Produce",
+      "Image": "https://www.pngitem.com/pimgs/m/104-1042524_cartoon-apple-png-apple-clipart-transparent-png.png"
+    },
+    {
+      "index": "2",
+      "item": "mango",
+      "price": "8",
+      "descript": "fresh",
+      "category": "Produce",
+      "Image": "https://www.clipartmax.com/png/middle/20-203675_28-collection-of-mango-clipart-transparent-mango-clipart-transparent.png"
+    },
+    {
+      "index": "3",
+      "item": "Grapes",
+      "price": "10",
+      "descript": "fresh",
+      "category": "Produce",
+      "Image": "https://banner2.cleanpng.com/20180419/riq/kisspng-common-grape-vine-wine-clip-art-grape-clipart-5ad87e3cadc055.9285446015241375327117.jpg"
+    },
+    {
+      "index": "4",
+      "item": "cherry",
+      "price": "9",
+      "descript": "fresh",
+      "category": "Produce",
+      "Image": "https://lh3.googleusercontent.com/proxy/me0o3OwqehW-Jx9aghUvTORjKuUL8O8DC1xX-mpLchn-bj5bOnTL33DFmQAYr1UOTTCdVP7TT8Jhy_yMbLxmilKfxjCXswIzvubsGLs1NVTTVbR6dz3a7g"
+    },
+    {
+      "index": "5",
+      "item": "onion",
+      "price": "2",
+      "descript": "fresh",
+      "category": "Produce",
+      "Image": "https://www.pikpng.com/pngl/m/97-975023_onion-png-file-onion-png-clipart.png"
+    },
+    {
+      "index": "6",
+      "item": "Potatoes",
+      "price": "2",
+      "descript": "fresh",
+      "category": "Produce",
+      "Image": "https://p7.hiclipart.com/preview/767/467/763/potato-euclidean-vector-vegetable-vector-vegetables-potatoes.jpg"
+    },
+    {
+      "index": "7",
+      "item": "spinich",
+      "price": "3",
+      "descript": "fresh",
+      "category": "Produce",
+      "Image": "https://p7.hiclipart.com/preview/914/64/955/smoothie-spinach-leaf-vegetable-food-vegetable.jpg"
+    },
+    {
+      "index": "8",
+      "item": "tomatoes",
+      "price": "3",
+      "descript": "fresh",
+      "category": "Produce",
+      "Image": "https://www.clipartmax.com/png/middle/266-2662151_tomato-slice-clipart-download-tomato-png.png"
+    },
+    {
+      "index": "9",
+      "item": "ginger",
+      "price": "1",
+      "descript": "fresh",
+      "category": "Produce",
+      "Image": "https://www.kindpng.com/picc/m/131-1312157_ginger-png-background-clipart-bentong-ginger-transparent-png.png"
+    },
+    {
+      "index": "10",
+      "item": "beans",
+      "price": "2",
+      "descript": "fresh",
+      "category": "Produce",
+      "Image": "https://www.netclipart.com/pp/m/17-170634_free-green-beans-png-image-green-beans-no.png"
+    }
+  ]
+
+
+
+}
